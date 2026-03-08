@@ -3,6 +3,7 @@ function Success() {
     <div>
       <h1>Login Başarılı 🎉</h1>
       <p>Hoşgeldiniz!</p>
+      <p>deneme</p>
     </div>
   );
 }
