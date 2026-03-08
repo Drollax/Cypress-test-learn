@@ -37,26 +37,28 @@ function Login() {
         <div>
           <label>Email</label>
           <input
+            data-testid="email-input"
             type="email"
             placeholder="email giriniz"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           {!isEmailValid && email.length > 0 && (
-            <p>Geçerli bir email giriniz</p>
+            <p className="error">Geçerli bir email giriniz</p>
           )}
         </div>
 
         <div>
           <label>Şifre</label>
           <input
+            data-testid="password-input"
             type="password"
             placeholder="şifre giriniz"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           {!isPasswordValid && password.length > 0 && (
-            <p>
+            <p className="error">
               Şifre en az 8 karakter, büyük harf, küçük harf ve sayı içermeli
             </p>
           )}
@@ -64,6 +66,7 @@ function Login() {
 
         <div>
           <input
+          data-testid="checkbox"
             type="checkbox"
             checked={accepted}
             onChange={(e) => setAccepted(e.target.checked)}
@@ -71,7 +74,7 @@ function Login() {
           <label>Şartları kabul ediyorum</label>
         </div>
 
-        <button disabled={!isFormValid}>
+        <button data-testid="login-button" disabled={!isFormValid}>
           Login
         </button>
 
